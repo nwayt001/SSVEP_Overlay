@@ -103,10 +103,7 @@ namespace SSVEP_Overlay
             ssvepDX.Initialize(form, spriteBatch);
             Components.Add(ssvepDX);
 
-            //DCCVEP_DirectX_Advanced_V2 dcc = new DCCVEP_DirectX_Advanced_V2(this);
-            //dcc.Initialize(form, spriteBatch);
-            //Components.Add(dcc);
-           //System.Diagnostics.Process.Start()
+            //System.Diagnostics.Process.Start()
             //World of warcraft control interface component
             WowControl AppControl = new WowControl(this, "World Of Warcraft");
             Components.Add(AppControl);
@@ -146,8 +143,6 @@ namespace SSVEP_Overlay
         // Update Logic 
         protected override void Update(GameTime gameTime)
         {
-            
-
             //mouseState= Mouse.GetState();
             //Mouse.SetPosition(mouseState.X, mouseState.Y);
             
