@@ -25,6 +25,7 @@ namespace SSVEP_Overlay
         MOUSEPOINT mousePos;
 
         #region Fields
+        int selectedApp = 0; // selected app
         //Game
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -34,8 +35,10 @@ namespace SSVEP_Overlay
 
         #endregion Fields
         //Constructor
-        public Game1()
+        public Game1(int selectedApp)
         {
+            this.selectedApp = selectedApp;
+
             //directX graphics 
             graphics = new GraphicsDeviceManager(this)
                 {
