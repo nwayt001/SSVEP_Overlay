@@ -21,8 +21,12 @@ namespace SSVEP_Overlay.Forms
             
             // Create the list of current applications 
             List<string> applications = new List<string>();
-            applications.Add("SSVEP Speller");
-            applications.Add("SSVEP Movement Control");
+            applications.Add("Any App Advanced Control");
+            applications.Add("Any App Basic Control");
+            applications.Add("World Of Warcraft Control");
+            applications.Add("Google Earth Control");
+            applications.Add("Cursor Control");
+            applications.Add("SSVEP Speller (Not yet implemented)");
             listBox1.DataSource = applications;
             
         }
@@ -30,6 +34,7 @@ namespace SSVEP_Overlay.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             selectedApp = listBox1.SelectedIndex;
+            this.Close();
         }
 
         private void AppSelectionGUI_Load(object sender, EventArgs e)

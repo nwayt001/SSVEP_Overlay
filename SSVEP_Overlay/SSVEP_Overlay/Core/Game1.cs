@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SSVEP_Overlay.BCI_Logic.Stimulator_DirectX;
 using SSVEP_Overlay.BCI_Logic.BCI2000_Control.SpecificApp;
+using SSVEP_Overlay.BCI_Logic.BCI2000_Control;
 using System.Runtime.InteropServices;
 #endregion Using Statements
 
@@ -105,17 +106,35 @@ namespace SSVEP_Overlay
             SSVEP_DirectX_Advanced_V2 ssvepDX = new SSVEP_DirectX_Advanced_V2(this);
             ssvepDX.Initialize(form, spriteBatch);
             Components.Add(ssvepDX);
-
-            //System.Diagnostics.Process.Start()
-            //World of warcraft control interface component
-            WowControl AppControl = new WowControl(this, "World Of Warcraft");
-            Components.Add(AppControl);
-
-            //CursorControl cursorControl = new CursorControl(this);
-            //Components.Add(cursorControl);
-
-            //SSVEP_Overlay.BCI_Logic.BCI2000_Control.AnyApp.Advanced2Class googleEarthControl = new BCI_Logic.BCI2000_Control.AnyApp.Advanced2Class(this);
-            //Components.Add(googleEarthControl);
+            
+            switch (selectedApp)
+            {
+                case 0:
+                    var appControl = new BCI_Logic.BCI2000_Control.AnyApp.AdvancedControl(this);
+                    Components.Add(appControl);
+                    break;
+                case 1:
+                    var appControl1 = new BCI_Logic.BCI2000_Control.AnyApp.BasicControl(this);
+                    Components.Add(appControl1);
+                    break;
+                case 2:
+                    var appControl2 = new WowControl(this, "World Of Warcraft");
+                    Components.Add(appControl2);
+                    break;
+                case 3:
+                    var appControl3 = new SpecificAppControl(this, "Google Earth");
+                    Components.Add(appControl3);
+                    break;
+                case 4:
+                    var appControl4 = new CursorControl(this);
+                    Components.Add(appControl4);
+                    break;
+                case 5:
+                    var appControl5 = new BCI_Logic.BCI2000_Control.AnyApp.AdvancedControl(this);
+                    Components.Add(appControl5);
+                    break;
+            }
+            
 
             //Cursor practice
             // InitCursor();
